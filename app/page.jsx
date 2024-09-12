@@ -1,9 +1,9 @@
 import React from 'react'
-import { getCategories } from './api/categories/route'
+
 import { getProducts } from './api/products/route';
 import CategoryListing from '@/components/CategoryListing';
 import ProductListing from '@/components/ProductListing';
-
+import { getCategories } from './api/categories/route';
 export default async function page() {
   //we now fetch our categories here
   //Note await moves with async, so if you use await even up change it to async
@@ -30,7 +30,7 @@ export default async function page() {
       {/* Instead of this above just use the components below */} 
 
       <CategoryListing data={categories}/>
-      {/* <ProductListing data={products} title="All Products" headerBg="blue"/> */}
+      <ProductListing data={products} title="All Products" headerBg="blue"/>
       {/* Now we are filtering the products */}
       <ProductListing data={allTelevisions} title="All Televisions" headerBg="green"/>
       <ProductListing data={allFridges} title="All Fridges" headerBg="purple"/>
